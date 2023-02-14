@@ -1,8 +1,45 @@
 # King County House Prices 
-https://www.bing.com/images/search?view=detailV2&ccid=6dznxh5Z&id=2499920453188484E2021C5F567F1719AE45AF54&thid=OIP.6dznxh5Zj1pLdS1t0ztOggHaEK&mediaurl=https%3a%2f%2fwww.10stunninghomes.com%2fwp-content%2fuploads%2fzen-courtyard-contemporary-home-singapore.jpg&exph=768&expw=1366&q=house&simid=608005565267850473&FORM=IRPRST&ck=7B1D4D27974FCF88FD6091923BEA9D39&selectedIndex=72
+Author: Pinalben Patel
+
+![image](https://user-images.githubusercontent.com/119024066/218669940-36bf22f8-3670-46ab-9688-6f2baeb17653.png)
 
 
-# Another module down--you're almost half way there!
+# The Data
+The King County Housing Data Set contains information about the size, location, condition, and other features of houses. Let's check the columns of the data set.
+
+date - Date house was sold
+price - Sale price (prediction target)
+bedrooms - Number of bedrooms
+bathrooms - Number of bathrooms
+sqft_living - Square footage of living space in the home
+sqft_lot - Square footage of the lot
+floors - Number of floors (levels) in house
+waterfront - Whether the house is on a waterfront
+view - Quality of view from house
+condition - How good the overall condition of the house is. Related to maintenance of house
+grade - Overall grade of the house. Related to the construction and design of the house
+sqft_above - Square footage of house apart from basement
+sqft_basement - Square footage of the basement
+yr_built - Year when house was built
+yr_renovated - Year when house was renovated
+zipcode - ZIP Code used by the United States Postal Service
+
+# Business Problem:
+RGB need to provide prospective home sellers with guidance on how to improve the value of their home prior to listing, including the predicted increase in value expected based on improvements to features. The results can inform home owners interested in selling their homes about the most important factors to consider for improving sale prices.
+
+# Methods
+The Data
+Data cleaning and pre-processing.
+Exploring the data
+Building regression models 
+Validation of the model
+Result
+
+
+
+
+
+
 
 
 
