@@ -1,47 +1,39 @@
-# King County House Prices 
+## King County House Prices 
 Author: Pinalben Patel
 
 ![image](https://user-images.githubusercontent.com/119024066/218669940-36bf22f8-3670-46ab-9688-6f2baeb17653.png)
 
 
-# The Data
+## The Data
 The King County Housing Data Set contains information about the size, location, condition, and other features of houses. Let's check the columns of the data set.
 
-date - Date house was sold
-price - Sale price (prediction target)
-bedrooms - Number of bedrooms
-bathrooms - Number of bathrooms
-sqft_living - Square footage of living space in the home
-sqft_lot - Square footage of the lot
-floors - Number of floors (levels) in house
-waterfront - Whether the house is on a waterfront
-view - Quality of view from house
-condition - How good the overall condition of the house is. Related to maintenance of house
-grade - Overall grade of the house. Related to the construction and design of the house
-sqft_above - Square footage of house apart from basement
-sqft_basement - Square footage of the basement
-yr_built - Year when house was built
-yr_renovated - Year when house was renovated
-zipcode - ZIP Code used by the United States Postal Service
+* date - Date house was sold
+* price - Sale price (prediction target)
+* bedrooms - Number of bedrooms
+* bathrooms - Number of bathrooms
+* sqft_living - Square footage of living space in the home
+* sqft_lot - Square footage of the lot
+* floors - Number of floors (levels) in house
+* waterfront - Whether the house is on a waterfront
+* view - Quality of view from house
+* condition - How good the overall condition of the house is. Related to maintenance of house
+* grade - Overall grade of the house. Related to the construction and design of the house
+* sqft_above - Square footage of house apart from basement
+* sqft_basement - Square footage of the basement
+* yr_built - Year when house was built
+* yr_renovated - Year when house was renovated
+* zipcode - ZIP Code used by the United States Postal Service
 
-# Business Problem:
+## Business Problem:
 RGB need to provide prospective home sellers with guidance on how to improve the value of their home prior to listing, including the predicted increase in value expected based on improvements to features. The results can inform home owners interested in selling their homes about the most important factors to consider for improving sale prices.
 
-# Methods
-The Data
-Data cleaning and pre-processing.
-Exploring the data
-Building regression models 
-Validation of the model
-Result
-
-
-
-
-
-
-
-
+## Methods
+* The Data
+* Data cleaning and pre-processing.
+* Exploring the data
+* Building regression models 
+* Validation of the model
+* Result
 
 All that remains in Phase 2 is to put our newfound data science skills to use with a large project! This project should take 20 to 30 hours to complete.
 
@@ -49,7 +41,7 @@ All that remains in Phase 2 is to put our newfound data science skills to use wi
 
 For this project, you will use regression modeling to analyze house sales in a northwestern county.
 
-### The Data
+## The Data
 
 This project uses the King County House Sales dataset, which can be found in  `kc_house_data.csv` in the data folder in this repo. The description of the column names can be found in `column_names.md` in the same folder. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions about what the data means.
 
@@ -66,40 +58,72 @@ It is up to you to decide what data from this dataset to use and how to use it. 
 * sqft_living15
 * sqft_lot15
 
-### Business Problem
+## Data Processing
 
-It is up to you to define a stakeholder and business problem appropriate to this dataset.
+To assist with creating good models, we completed some data cleaning including:
+* Dropping unrelated features to our model.
+* Creating dummy variable, log transfer and features skilling.
+* Checking correlation in between the variable.
 
-If you are struggling to define a stakeholder, we recommend you complete a project for a real estate agency that helps homeowners buy and/or sell homes. A business problem you could focus on for this stakeholder is the need to provide advice to homeowners about how home renovations might increase the estimated value of their homes, and by what amount.
+## Histogram!
 
-## Deliverables
+[image](https://user-images.githubusercontent.com/119024066/218673367-333dc353-90a1-41af-9149-5740e1ea18cd.png)
 
-There are three deliverables for this project:
+Many of the variables do not follow a normal distribution, and the scales are dramatically different for some variables. This may create issues with satisfying all regression assumptions, but we'll address those issues as they arise. Regression does not require features to be normally distributed.
 
-* A **GitHub repository**
-* A **Jupyter Notebook**
-* A **non-technical presentation**
+## Checking correlations
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic for instructions on creating and submitting your deliverables. Refer to the rubric associated with this assignment for specifications describing high-quality deliverables.
+![image](https://user-images.githubusercontent.com/119024066/218673541-f00d369d-6726-4077-be19-b10e47761fbd.png)
 
-### Key Points
+The three factors that together best predict a home's price in King County are square footage, grade, and bathrooms. The final multiple regression model includes these features. There is no clear linear relationship between a home's "floors," "bedrooms," and "waterfront." The multiple regression model will include sqft living because it has a stronger linear correlation with price than sqft lot.
 
-* **Your deliverables should explicitly address each step of the data science process.** Refer to [the Data Science Process lesson](https://github.com/learn-co-curriculum/dsc-data-science-processes) from Topic 19 for more information about process models you can use.
+## Multicollinearity
 
-* **Your Jupyter Notebook should demonstrate an iterative approach to modeling.** This means that you begin with a basic model, evaluate it, and then provide justification for and proceed to a new model. After you finish refining your models, you should provide 1-3 paragraphs discussing your final model - this should include interpreting at least 3 important parameter estimates or statistics.
+![image](https://user-images.githubusercontent.com/119024066/218674069-2139585f-9caf-4a4a-ba4e-662c91865f06.png)
 
-* **Based on the results of your models, your notebook and presentation should discuss at least two features that have strong relationships with housing prices.**
+price          1.000000
+grade          0.635934
+sqft_living    0.627438
+bathrooms      0.460266
+bedrooms       0.298955
+floors         0.273616
+sqft_lot       0.097296
+yr_built       0.063956
+waterfront     0.055232
+condition      0.035714
 
-## Getting Started
+Here we can clerly see that which variable have good reletionship with independed variable price.
 
-Start on this project by forking and cloning [this project repository](https://github.com/learn-co-curriculum/dsc-phase-2-project) to get a local copy of the dataset.
+## Model 
 
-We recommend structuring your project repository similar to the structure in [the Phase 1 Project Template](https://github.com/learn-co-curriculum/dsc-project-template). You can do this either by creating a new fork of that repository to work in or by building a new repository from scratch that mimics that structure.
+We are showing correlation and using regression coefficients in this analysis to be able to show the relationship between one or more features with sale price.
 
-## Project Submission and Review
+Using regression and interpreting correlation coefficients is effective for this business problem because it will allow for us to determine how sale price is impacted by different features and to what degree.
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
+Buildng complex models with multiple features allows for us to be able to make more accurate, data-driven predictions.
 
-## Summary
+## Recommendations
+ 
+Homeowners interested in selling their homes should focus on improving the design and quality of construction of their homes, which may in turn improve their home grade. They should try to increase the amount of living space on the land, perhaps by adding more bathrooms. Although homeowners probably have less control over it, the square footage of peoples' homes is also a very good predictor of price. Encourage your colleagues to increase the square footage of their homes to further raise the selling price of your house.
 
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
+## Limitations and Next Steps
+
+The model does have some limitations: any new data used with the model would need to go through a similar pretreatment step because some of the variables needed to be log-transformed to satisfy regression assumptions. Additionally, the model's applicability to data from other counties may be constrained due to regional variations in home prices. Because outliers were eliminated, the model might also be unable to predict extreme values. Future research should examine both homes with high price values and the best indicators of home prices outside of King County.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
