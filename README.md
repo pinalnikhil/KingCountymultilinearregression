@@ -1,8 +1,10 @@
-# Phase 2 Project
+# King County House Prices 
+https://www.bing.com/images/search?view=detailV2&ccid=6dznxh5Z&id=2499920453188484E2021C5F567F1719AE45AF54&thid=OIP.6dznxh5Zj1pLdS1t0ztOggHaEK&mediaurl=https%3a%2f%2fwww.10stunninghomes.com%2fwp-content%2fuploads%2fzen-courtyard-contemporary-home-singapore.jpg&exph=768&expw=1366&q=house&simid=608005565267850473&FORM=IRPRST&ck=7B1D4D27974FCF88FD6091923BEA9D39&selectedIndex=72
 
-Another module down--you're almost half way there!
 
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-2-project-campus/master/halfway-there.gif)
+# Another module down--you're almost half way there!
+
+
 
 All that remains in Phase 2 is to put our newfound data science skills to use with a large project! This project should take 20 to 30 hours to complete.
 
