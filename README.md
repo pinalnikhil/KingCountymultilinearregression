@@ -67,19 +67,20 @@ To assist with creating good models, we completed some data cleaning including:
 
 ## Histogram!
 
-[image](https://user-images.githubusercontent.com/119024066/218673367-333dc353-90a1-41af-9149-5740e1ea18cd.png)
+![image](https://user-images.githubusercontent.com/119024066/218675966-79986aa3-dc5d-422c-a22d-81c7c69d8c6c.png)
+
 
 Many of the variables do not follow a normal distribution, and the scales are dramatically different for some variables. This may create issues with satisfying all regression assumptions, but we'll address those issues as they arise. Regression does not require features to be normally distributed.
 
 ## Checking correlations
 
-![image](https://user-images.githubusercontent.com/119024066/218673541-f00d369d-6726-4077-be19-b10e47761fbd.png)
+![image](https://user-images.githubusercontent.com/119024066/218676154-5fcc8fcf-0772-4332-b970-2a3e54140499.png)
 
 The three factors that together best predict a home's price in King County are square footage, grade, and bathrooms. The final multiple regression model includes these features. There is no clear linear relationship between a home's "floors," "bedrooms," and "waterfront." The multiple regression model will include sqft living because it has a stronger linear correlation with price than sqft lot.
 
 ## Multicollinearity
 
-![image](https://user-images.githubusercontent.com/119024066/218674069-2139585f-9caf-4a4a-ba4e-662c91865f06.png)
+![image](https://user-images.githubusercontent.com/119024066/218676288-4cba4930-c068-4eb2-a697-bb3aa3f73f99.png)
 
 price          1.000000
 grade          0.635934
